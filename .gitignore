@@ -1,0 +1,5 @@
+node_modules/
+.env
+career-guidance-backend/node_modules/
+career-guidance-frontend/node_modules/
+career-guidance-backend/.env
