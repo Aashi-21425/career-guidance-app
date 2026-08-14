@@ -14,6 +14,21 @@ const resumeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  targetRole: {
+    type: String,
+  },
+  currentSkills: {
+    type: [String],
+    default: [],
+  },
+  missingSkills: {
+    type: [String],
+    default: [],
+  },
+  recommendations: {
+    type: [String],
+    default: [],
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Resume', resumeSchema);

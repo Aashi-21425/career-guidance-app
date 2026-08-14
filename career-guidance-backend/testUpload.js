@@ -3,7 +3,7 @@ const FormData = require('form-data');
 const fs = require('fs');
 
 // PASTE YOUR LOGIN TOKEN HERE (from Day 2 login test)
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzczMDMyMGJhOGY4M2M4NDc1M2YwNSIsImlhdCI6MTc4NjE5NjAxOCwiZXhwIjoxNzg2ODAwODE4fQ.iDObuEsUYPhFvsvWlvBZNJy_s9CuxCZlk0qU5d_2szE";
+const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzczMDMyMGJhOGY4M2M4NDc1M2YwNSIsImlhdCI6MTc4NjczOTI4NiwiZXhwIjoxNzg3MzQ0MDg2fQ.TWRVtXriLfuSTo9RzYz2ThMQe1RXPWxBYU1yHk8aV6g";
 
 const form = new FormData();
 form.append('resume', fs.createReadStream('./AASHI MISHRA_CSDS A_RESUME.pdf'));
