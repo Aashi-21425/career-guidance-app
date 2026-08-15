@@ -55,4 +55,32 @@ Respond ONLY with valid JSON in this exact format, no extra text, no markdown co
   }
 };
 
-module.exports = { analyzeResume };
+// GET ALL ANALYSES FOR THE LOGGED-IN USER
+const getHistory = async (req, res) => {
+  try {
+    const resumes = await Resume.find({ userId: req.userId })
+      .sort({ createdAt: -1 })
+      .select('originalFileName targetRole currentSkills missingSkills recommendations createdAt');
+
+    res.status(200).json(resumes);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// GET ONE SPECIFIC ANALYSIS BY ID
+const getAnalysisById = async (req, res) => {
+  try {
+    const resume = await Resume.findOne({ _id: req.params.id, userId: req.userId });
+
+    if (!resume) {
+      return res.status(404).json({ message: 'Analysis not found' });
+    }
+
+    res.status(200).json(resume);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { analyzeResume, getHistory, getAnalysisById };
