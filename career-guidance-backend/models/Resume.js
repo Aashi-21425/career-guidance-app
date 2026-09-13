@@ -29,6 +29,14 @@ const resumeSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  careerPaths: {
+    type: [String],
+    default: [],
+  },
+  learningResources: {
+    type: [String],
+    default: [],
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Resume', resumeSchema);

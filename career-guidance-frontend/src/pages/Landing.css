@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f1729;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 40px;
+}
+
+.landing-content {
+  max-width: 640px;
+  text-align: center;
+  color: white;
+}
+
+.landing-icon {
+  width: 64px;
+  height: 64px;
+  border: 1.5px solid #c9a95f;
+  border-radius: 50%;
+  display: flex;
+  margin: 0 auto 28px;
+  position: relative;
+}
+
+.landing-icon::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: #c9a95f;
+  top: 10px;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(-30deg);
+}
+
+.landing-content .tag {
+  color: #c9a95f;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.landing-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  line-height: 1.25;
+  margin: 20px 0 24px;
+  font-weight: 700;
+}
+
+.landing-content p {
+  color: #9aa5b8;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btn-primary {
+  background: #c9a95f;
+  color: #0f1729;
+}
+
+.btn-primary:hover {
+  background: #d9bc78;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+  border-color: white;
+}
+
+@media (max-width: 600px) {
+  .landing-content h1 {
+    font-size: 2.2rem;
+  }
+  .landing-buttons {
+    flex-direction: column;
+  }
+}

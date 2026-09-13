@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.auth-left {
+  flex: 1;
+  background: #0f1729;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+}
+
+.auth-icon {
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid #c9a95f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.auth-icon::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: #c9a95f;
+  top: 10px;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(-30deg);
+}
+
+.auth-left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.auth-left p {
+  color: #9aa5b8;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f5f0;
+  padding: 40px;
+}
+
+.auth-form-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form-box .tag {
+  color: #2f6b4f;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.auth-form-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 10px 0 30px;
+  color: #0f1729;
+  font-weight: 700;
+}
+
+.auth-form-box label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a5264;
+  margin-bottom: 8px;
+}
+
+.auth-form-box input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border: 1px solid #d8d5cc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  background: white;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.auth-form-box input:focus {
+  border-color: #0f1729;
+}
+
+.auth-form-box button {
+  width: 100%;
+  padding: 15px;
+  background: #0f1729;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.auth-form-box button:hover {
+  background: #1e2a4a;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.auth-switch a {
+  color: #2f6b4f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .auth-left { display: none; }
+}

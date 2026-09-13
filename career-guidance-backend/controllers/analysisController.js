@@ -26,7 +26,9 @@ Respond ONLY with valid JSON in this exact format, no extra text, no markdown co
 {
   "currentSkills": ["skill1", "skill2"],
   "missingSkills": ["skill1", "skill2"],
-  "recommendations": ["recommendation1", "recommendation2"]
+  "recommendations": ["recommendation1", "recommendation2"],
+  "careerPaths": ["career path 1", "career path 2", "career path 3"],
+  "learningResources": ["resource 1 with course/book name", "resource 2", "resource 3"]
 }
     `;
 
@@ -41,6 +43,8 @@ Respond ONLY with valid JSON in this exact format, no extra text, no markdown co
     resume.currentSkills = aiResult.currentSkills || [];
     resume.missingSkills = aiResult.missingSkills || [];
     resume.recommendations = aiResult.recommendations || [];
+    resume.careerPaths = aiResult.careerPaths || [];
+    resume.learningResources = aiResult.learningResources || [];
     await resume.save();
 
     res.status(200).json({
@@ -49,6 +53,8 @@ Respond ONLY with valid JSON in this exact format, no extra text, no markdown co
       currentSkills: resume.currentSkills,
       missingSkills: resume.missingSkills,
       recommendations: resume.recommendations,
+      careerPaths: resume.careerPaths,
+      learningResources: resume.learningResources,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -60,7 +66,7 @@ const getHistory = async (req, res) => {
   try {
     const resumes = await Resume.find({ userId: req.userId })
       .sort({ createdAt: -1 })
-      .select('originalFileName targetRole currentSkills missingSkills recommendations createdAt');
+      .select('originalFileName targetRole currentSkills missingSkills recommendations careerPaths learningResources createdAt');
 
     res.status(200).json(resumes);
   } catch (error) {
